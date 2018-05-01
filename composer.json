@@ -1,4 +1,6 @@
 {
+    "name": "aulasoftwarelibre/sfcalculator",
+    "description": "Demo devops talk",
     "type": "project",
     "license": "proprietary",
     "require": {
