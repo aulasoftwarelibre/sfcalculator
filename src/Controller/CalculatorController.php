@@ -9,6 +9,7 @@
 
 namespace App\Controller;
 
+use App\DTO\Numbers;
 use App\Form\NumbersFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,7 +28,9 @@ class CalculatorController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $result = 0;
+            /** @var Numbers $data */
+            $data = $form->getData();
+            $result = $data->getA() + $data->getB();
         }
 
         return $this->render('calculator/index.html.twig', [
